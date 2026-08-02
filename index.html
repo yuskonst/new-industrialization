@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="За новую индустриализацию — общественная программа роста доходов, развития производств и экономического суверенитета России.">
+  <meta name="theme-color" content="#0159d4">
+  <title>За новую индустриализацию!</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-live="polite" aria-label="Загрузка сайта">
+    <div class="loader__mark" aria-hidden="true"><span>Н</span><i></i></div>
+    <p class="loader__type"><span id="loaderText"></span><b aria-hidden="true">|</b></p>
+    <div class="loader__progress" aria-hidden="true"><i></i></div>
+  </div>
+
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="За новую индустриализацию — на главную">
+      <svg viewBox="0 0 74 50" aria-hidden="true"><path d="M4 43 16 6h10L18 43H4Zm22 0L38 6h11l-3 11h12l4-11h10L60 43H49l4-13H41l-4 13H26Z" fill="currentColor"/><path d="m28 43 27-37h13L42 43H28Z" fill="#ffff00"/></svg>
+      <span>За новую<br>индустриализацию!</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
+    <nav class="nav" id="mainNav" aria-label="Основная навигация">
+      <a href="#program">Программа</a>
+      <a href="#steps">10 шагов</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#support">Поддержать</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" aria-labelledby="heroTitle">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__inner shell">
+        <p class="eyebrow eyebrow--blue">Общественная программа</p>
+        <h1 id="heroTitle">Новая индустриализация — это программа роста доходов, развития производств и экономического суверенитета России.</h1>
+        <p class="hero__lead">10 шагов <span>к богатству, свободе и силе</span></p>
+        <a class="button button--blue" href="#support">Поддержать программу <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero__badge" aria-hidden="true"><span>10</span><small>шагов<br>вперёд</small></div>
+      <p class="hero__side" aria-hidden="true">РОССИЯ · ПРОИЗВОДСТВО · ДОСТАТОК</p>
+    </section>
+
+    <section class="counter-section section" id="program" aria-labelledby="counterTitle">
+      <div class="shell counter-section__layout">
+        <div>
+          <p class="eyebrow eyebrow--yellow">Поддержка программы</p>
+          <h2 id="counterTitle">Нас уже поддержали</h2>
+          <p class="counter-section__copy">Каждая подпись приближает нас к стране, о которой мы мечтаем.</p>
+        </div>
+        <div class="counter" data-goal="200000" data-value="43728">
+          <p class="counter__number"><span id="signatureCount">0</span><small>из 200 000</small></p>
+          <div class="counter__meter" role="progressbar" aria-label="Сбор подписей" aria-valuemin="0" aria-valuemax="200000" aria-valuenow="43728"><i id="counterBar"></i></div>
+          <p class="counter__label"><strong id="counterPercent">0%</strong> за Великую и Богатую Россию</p>
+        </div>
+      </div>
+      <p class="counter-section__running" aria-hidden="true">ДОСТОИНСТВО ТРУДА · СИЛЬНАЯ ЭКОНОМИКА · НОВЫЕ ВОЗМОЖНОСТИ · ДОСТОИНСТВО ТРУДА · СИЛЬНАЯ ЭКОНОМИКА · НОВЫЕ ВОЗМОЖНОСТИ ·</p>
+    </section>
+
+    <section class="manifest section" aria-labelledby="manifestTitle">
+      <div class="shell">
+        <div class="manifest__head">
+          <p class="eyebrow eyebrow--blue">01 · О тех, кто создаёт</p>
+          <h2 id="manifestTitle">Россия принадлежит нам!</h2>
+          <p class="manifest__intro">Россия — это люди, которые работают, открывают предприятия, выращивают урожай, развивают технологии, лечат, учат, проектируют, строят и создают новое. Рабочие и инженеры, предприниматели и самозанятые, специалисты в офисах и люди у станка, жители больших городов и малых населённых пунктов.</p>
+        </div>
+        <div class="figures" id="figures" aria-label="Экономические показатели">
+          <article class="figure"><span class="figure__num" data-counter="61200000000000">0</span><p>рублей наших налогов выделено государству в 2025 году</p></article>
+          <article class="figure"><span class="figure__num" data-counter="13000000000000">0</span><p>рублей направлено поступлениями от малого и среднего бизнеса</p></article>
+          <article class="figure"><span class="figure__num" data-counter="9740000000000">0</span><p>рублей получил бюджет с доходов физических лиц</p></article>
+          <article class="figure"><span class="figure__num" data-counter="136000000000">0</span><p>рублей перечислили самозанятые</p></article>
+        </div>
+        <div class="manifest__two-col">
+          <p>Мы умеем решать сложные задачи, брать ответственность и добиваться результата. Наш труд обеспечивает семьи, развивает общество и формирует доходы государства. Поэтому экономическая политика должна видеть в гражданах не объект управления, а главную созидательную силу страны.</p>
+          <p>Россия держится на нас. Мы не иждивенцы, которых нужно учить и воспитывать приказом сверху. Мы — хребет экономики России, её главный резерв и центральная опора.</p>
+        </div>
+        <div class="people-gallery" aria-label="Будущие портреты сторонников программы">
+          <article class="person-placeholder"><span>PNG</span><p>Место для портрета<br>и кликабельной ссылки</p></article>
+          <article class="person-placeholder person-placeholder--yellow"><span>PNG</span><p>Место для портрета<br>и кликабельной ссылки</p></article>
+          <article class="person-placeholder"><span>PNG</span><p>Место для портрета<br>и кликабельной ссылки</p></article>
+          <p class="people-gallery__note">Будущие лица программы<br><b>люди труда</b></p>
+        </div>
+        <p class="manifest__closing">Сегодня, когда воины защищают Единую Родину на фронте, рабочие и предприниматели сохраняют экономику России в тылу. Сильная страна — это страна, где богатство считается достоинством, а не преступлением.</p>
+      </div>
+    </section>
+
+    <section class="model section" aria-labelledby="modelTitle">
+      <div class="shell model__layout">
+        <div class="model__title-wrap"><p class="eyebrow eyebrow--yellow">02 · Точка выбора</p><h2 id="modelTitle">Экономическая модель должна работать на рост доходов и производства</h2></div>
+        <div class="model__copy"><p>Люди и бизнес сталкиваются с высокой стоимостью капитала, сложным регулированием, зависимостью от импорта и неравномерным развитием регионов. В результате инициативы откладываются, предприятия медленнее инвестируют, а квалифицированные специалисты уезжают туда, где больше возможностей.</p><p>Нам нужен прагматичный курс: свобода созидать, понятные правила и сильное производство внутри страны.</p></div>
+      </div>
+    </section>
+
+    <section class="steps section" id="steps" aria-labelledby="stepsTitle">
+      <div class="shell">
+        <div class="steps__intro"><p class="eyebrow eyebrow--blue">03 · Практическая программа</p><h2 id="stepsTitle">10 шагов к Новой индустриализации</h2><p>Откройте шаг, чтобы прочитать подробнее и предложить свою идею.</p></div>
+        <div class="steps__list">
+          <details class="step" open><summary><span>01</span><b>Доступный капитал для развития</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Долгосрочные инвестиции и предсказуемые условия для предприятий, которые расширяют производство, внедряют технологии и создают рабочие места.</p><button class="text-button" data-step-title="Доступный капитал для развития" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>02</span><b>Налоговая система, поощряющая труд</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Налоговые правила должны помогать честной работе, вложениям в оборудование и росту заработной платы, а не делать развитие исключением.</p><button class="text-button" data-step-title="Налоговая система, поощряющая труд" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>03</span><b>Производство в каждом регионе</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Региональная политика должна учитывать местные ресурсы, кадры и логистику, чтобы возможности для развития были доступны по всей стране.</p><button class="text-button" data-step-title="Производство в каждом регионе" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>04</span><b>Инженерное образование и прикладная наука</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Школы, колледжи, вузы и предприятия должны быть связаны реальными задачами — от подготовки кадров до внедрения разработок.</p><button class="text-button" data-step-title="Инженерное образование и прикладная наука" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>05</span><b>Технологическая независимость</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Критические технологии, оборудование и программные решения должны развиваться внутри страны в сотрудничестве науки и промышленности.</p><button class="text-button" data-step-title="Технологическая независимость" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>06</span><b>Свобода для малого и среднего бизнеса</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Малый бизнес создаёт рабочие места и новые продукты. Его росту нужны понятные требования, защита собственности и доступ к инфраструктуре.</p><button class="text-button" data-step-title="Свобода для малого и среднего бизнеса" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>07</span><b>Справедливая внешняя торговля</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Внешняя торговля должна открывать рынки для российских производителей и защищать их от недобросовестной конкуренции.</p><button class="text-button" data-step-title="Справедливая внешняя торговля" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>08</span><b>Инфраструктура для связанной страны</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Дороги, связь, энергетика и логистика объединяют регионы, уменьшают издержки и дают людям равный доступ к рынкам и возможностям.</p><button class="text-button" data-step-title="Инфраструктура для связанной страны" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>09</span><b>Доходы, которые растут вместе с производительностью</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Рост производительности должен отражаться в доходах работников, качестве жизни семей и способности планировать будущее.</p><button class="text-button" data-step-title="Доходы, которые растут вместе с производительностью" type="button">Предложить идею <span>↗</span></button></div></details>
+          <details class="step"><summary><span>10</span><b>Участие граждан в экономической политике</b><i aria-hidden="true">+</i></summary><div class="step__body"><p>Люди, которые создают стоимость, должны быть услышаны при принятии решений, влияющих на их труд, предприятия и регионы.</p><button class="text-button" data-step-title="Участие граждан в экономической политике" type="button">Предложить идею <span>↗</span></button></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="why section" aria-labelledby="whyTitle">
+      <div class="shell why__layout">
+        <div class="why__number" aria-hidden="true">СЕЙЧАС</div>
+        <div><p class="eyebrow eyebrow--yellow">04 · Время действовать</p><h2 id="whyTitle">Созидание должно снова стать основой развития России</h2><p>За последние десятилетия Россия получила серьёзный опыт — и одновременно увидела риски зависимости от внешних рынков, технологий и финансовых решений. Сегодня промышленная устойчивость, продовольственная безопасность, прикладная наука и инженерные компетенции вновь имеют стратегическое значение.</p><p>Перемены требуют времени, но откладывать их становится дороже. Чем раньше страна создаст условия для инвестиций, производства и роста квалифицированной занятости, тем больше возможностей получат нынешние и будущие поколения.</p><a class="button button--outline" href="#support">Поддержать 10 шагов <span aria-hidden="true">↘</span></a></div>
+      </div>
+    </section>
+
+    <section class="support section" id="support" aria-labelledby="supportTitle">
+      <div class="shell support__layout">
+        <div class="support__intro"><p class="eyebrow eyebrow--blue">05 · Поддержать программу</p><h2 id="supportTitle">Наша цель —<br>200 000 подписей</h2><p>Русский — значит богатый!</p><p class="support__fine">Это интерактивный макет: форма не отправляет данные и не подключена к внешним сервисам.</p></div>
+        <form class="sign-form" id="signForm" novalidate>
+          <div class="sign-form__title"><span>Вариант 1</span><b>Заполнить форму на сайте</b></div>
+          <label>Имя и фамилия <em>*</em><input name="fullName" autocomplete="name" required placeholder="Иван Иванов"></label>
+          <label>Город или регион <em>*</em><input name="region" autocomplete="address-level1" required placeholder="Москва"></label>
+          <label>Email <small>необязательно</small><input name="email" autocomplete="email" type="email" placeholder="you@example.ru"></label>
+          <label class="check"><input type="checkbox" name="agreement" required><span>Я ознакомился(ась) с условиями общественной петиции и согласен(на) на обработку персональных данных. <button class="policy-link" type="button" data-dialog-open="policyDialog">Политика обработки персональных данных.</button></span></label>
+          <button class="button button--blue button--wide" type="submit">Поддержать манифест <span aria-hidden="true">↘</span></button>
+          <p class="sign-form__hint">Это общественная петиция. Подпись не создаёт юридических обязательств. Её можно отозвать в порядке, указанном в политике обработки данных.</p>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="media section" aria-labelledby="mediaTitle">
+      <div class="shell">
+        <div class="media__head"><p class="eyebrow eyebrow--blue">06 · Медиа</p><h2 id="mediaTitle">О программе —<br>коротко и по делу</h2><div class="slider-controls"><button type="button" class="slider-button" id="videoPrev" aria-label="Предыдущее видео">←</button><span id="videoStatus" aria-live="polite">1 / 2</span><button type="button" class="slider-button" id="videoNext" aria-label="Следующее видео">→</button></div></div>
+        <div class="video-carousel" id="videoCarousel" tabindex="0" aria-label="Карусель видео">
+          <article class="video-card is-active" data-video-slide><div class="video-card__screen"><span>Видео 01</span><button type="button" aria-label="Воспроизведение не подключено">▶</button></div><div><p>Кратко о программе</p><small>Зарезервировано для видео КАБ из VK Видео</small></div></article>
+          <article class="video-card" data-video-slide><div class="video-card__screen video-card__screen--alt"><span>Видео 02</span><button type="button" aria-label="Воспроизведение не подключено">▶</button></div><div><p>Разговор о Новой индустриализации</p><small>Зарезервировано для будущего видеоматериала</small></div></article>
+        </div>
+        <div class="supporters"><p class="eyebrow eyebrow--blue">Нашу программу поддержали</p><div class="supporters__row"><article class="supporter-placeholder">Место для фото и ФИО</article><article class="supporter-placeholder">Место для фото и ФИО</article><article class="supporter-placeholder">Место для фото и ФИО</article><article class="supporter-placeholder">Место для фото и ФИО</article></div></div>
+        <div class="media__links"><button type="button" class="button button--line">Ссылка на программу <span>↗</span></button><button type="button" class="button button--line">Экономический совет ЛДПР <span>↗</span></button></div>
+      </div>
+    </section>
+
+    <section class="author section" aria-labelledby="authorTitle">
+      <div class="shell author__layout">
+        <figure class="author__photo"><span>ФОТО</span><figcaption>Будущий портрет<br>Константина Бабкина</figcaption></figure>
+        <div><p class="eyebrow eyebrow--yellow">07 · Автор концепции</p><h2 id="authorTitle">Константин Анатольевич Бабкин</h2><p class="author__role">Кандидат в депутаты · Партия ЛДПР</p><p>Автор концепции «Новой индустриализации». Промышленник с двадцатилетним опытом, совладелец «Ростсельмаш», президент промышленного союза «Новое Содружество» и ассоциации «Росспецмаш». Практик реальной экономики.</p><p>Новая индустриализация — общее название единой концепции развития России и роста доходов граждан. Она включает меры налоговой, кредитной и внешнеторговой политики.</p><p>В канале: детали программы, сколько подписей собрано, какие законопроекты пойдут в Думу и что реально изменится в нашей жизни.</p><button type="button" class="button button--yellow">Подписаться на канал <span>↗</span></button></div>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq" aria-labelledby="faqTitle">
+      <div class="shell faq__inner"><p class="eyebrow eyebrow--blue">08 · Ответы</p><h2 id="faqTitle">Вопросы и ответы</h2>
+        <details class="faq__item"><summary>Что происходит после подписи?<i>+</i></summary><p>Ваши ФИО и город добавляются к подписям манифеста. Миллион подписей — это голос, который невозможно проигнорировать.</p></details>
+        <details class="faq__item"><summary>Это юридически обязывающая подпись?<i>+</i></summary><p>Нет. Это общественная петиция. Подпись выражает поддержку заветов манифеста и усиливает политический вес обращения. Никаких юридических последствий для подписавших нет.</p></details>
+        <details class="faq__item"><summary>Кто увидит мои данные?<i>+</i></summary><p>ФИО и город — для учёта подписей. Email — только для информирования. Мы не передаём данные третьим лицам (152-ФЗ).</p></details>
+        <details class="faq__item"><summary>Можно ли отозвать подпись?<i>+</i></summary><p>Да. Напишите на <a href="mailto:contact@example.ru">contact@example.ru</a>. Данные удалим в течение 3 рабочих дней.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell footer__top"><p>Когда тысячи верят в идею —<br><b>идея приходит в реальность.</b></p><div class="footer__resources" aria-label="Социальные сети"><button type="button">ТГ</button><button type="button">ВК</button><button type="button">ЮТ</button></div></div><div class="shell footer__bottom"><span>За новую индустриализацию!</span><span>Макет для первичного согласования · 2026</span></div></footer>
+
+  <a class="support-fab" href="#support">Поддержать<br>программу <span>↘</span></a>
+
+  <dialog class="dialog" id="ideaDialog" aria-labelledby="ideaTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><p class="eyebrow eyebrow--blue">Предложение к программе</p><h2 id="ideaTitle">Ваше предложение</h2><p class="dialog__topic" id="ideaTopic"></p><label>Идея<textarea id="ideaText" rows="5" maxlength="700" placeholder="Опишите предложение — в макете текст не отправляется."></textarea></label><button type="button" class="button button--blue" id="ideaSubmit">Отправить <span>↗</span></button><p class="dialog__message" aria-live="polite"></p></dialog>
+  <dialog class="dialog dialog--policy" id="policyDialog" aria-labelledby="policyTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><p class="eyebrow eyebrow--blue">Черновик</p><h2 id="policyTitle">Политика обработки персональных данных</h2><p>Для публикации потребуется юридически проверенный текст политики, сведения об операторе персональных данных, сроках хранения, основаниях обработки и канале отзыва согласия. В этом макете данные формы не передаются и не сохраняются.</p></dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
