@@ -1,18 +1,21 @@
 (() => {
   'use strict';
 
-  const config = { loaderText: 'За новую индустриализацию!', counterDuration: 1600 };
+  const config = { loaderTop: 'За новую', loaderBottom: 'Индустриализацию!', counterDuration: 1600 };
   const byId = (id) => document.getElementById(id);
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function typeLoader() {
-    const output = byId('loaderText');
+    const outputTop = byId('loaderTextTop');
+    const outputBottom = byId('loaderTextBottom');
     const loader = byId('loader');
     let index = 0;
+    const phrase = `${config.loaderTop}${config.loaderBottom}`;
     const draw = () => {
-      output.textContent = config.loaderText.slice(0, index);
+      outputTop.textContent = phrase.slice(0, index).slice(0, config.loaderTop.length);
+      outputBottom.textContent = phrase.slice(config.loaderTop.length, index);
       index += 1;
-      if (index <= config.loaderText.length) window.setTimeout(draw, reduceMotion ? 0 : 36);
+      if (index <= phrase.length) window.setTimeout(draw, reduceMotion ? 0 : 36);
       else window.setTimeout(() => loader.classList.add('is-done'), reduceMotion ? 0 : 410);
     };
     draw();
@@ -37,6 +40,7 @@
     const counter = document.querySelector('.counter');
     const value = Number(counter.dataset.value);
     const goal = Number(counter.dataset.goal);
+    if (!Number.isFinite(value)) return;
     const percent = Math.round((value / goal) * 100);
     animateNumber(byId('signatureCount'), value, config.counterDuration);
     byId('counterPercent').textContent = `${percent}%`;
@@ -45,7 +49,10 @@
 
   function initializeFigures() {
     const figures = byId('figures');
-    if (!('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window)) {
+      figures.querySelectorAll('[data-counter]').forEach((element) => animateNumber(element, Number(element.dataset.counter), reduceMotion ? 0 : 450, ' ₽'));
+      return;
+    }
     const observer = new IntersectionObserver((entries, current) => {
       if (!entries[0].isIntersecting) return;
       figures.querySelectorAll('[data-counter]').forEach((element) => animateNumber(element, Number(element.dataset.counter), 1700, ' ₽'));
@@ -57,28 +64,44 @@
   function setupNavigation() {
     const toggle = document.querySelector('.nav-toggle');
     const nav = byId('mainNav');
+    const closeNavigation = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('is-open');
+    };
     toggle.addEventListener('click', () => {
       const opened = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(opened));
       nav.classList.toggle('is-open', opened);
     });
     nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
+      closeNavigation();
     }));
+    const breakpoint = window.matchMedia('(max-width: 760px)');
+    const resetAfterViewportChange = () => closeNavigation();
+    if (typeof breakpoint.addEventListener === 'function') breakpoint.addEventListener('change', resetAfterViewportChange);
+    else breakpoint.addListener(resetAfterViewportChange);
+    closeNavigation();
   }
 
   function setupDialogs() {
     const ideaDialog = byId('ideaDialog');
+    const openDialog = (dialog) => {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.classList.add('is-open');
+    };
+    const closeDialog = (dialog) => {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.classList.remove('is-open');
+    };
     document.querySelectorAll('[data-step-title]').forEach((button) => button.addEventListener('click', () => {
       byId('ideaTopic').textContent = button.dataset.stepTitle;
       byId('ideaText').value = '';
-      ideaDialog.showModal();
+      openDialog(ideaDialog);
     }));
-    document.querySelectorAll('[data-dialog-open]').forEach((button) => button.addEventListener('click', () => byId(button.dataset.dialogOpen).showModal()));
-    document.querySelectorAll('[data-dialog-close]').forEach((button) => button.addEventListener('click', () => button.closest('dialog').close()));
+    document.querySelectorAll('[data-dialog-open]').forEach((button) => button.addEventListener('click', () => openDialog(byId(button.dataset.dialogOpen))));
+    document.querySelectorAll('[data-dialog-close]').forEach((button) => button.addEventListener('click', () => closeDialog(button.closest('dialog'))));
     byId('ideaSubmit').addEventListener('click', () => {
-      byId('ideaDialog').querySelector('.dialog__message').textContent = 'Макет принят: предложение не отправлено и не сохранено.';
+      byId('ideaDialog').querySelector('.dialog__message').textContent = '';
     });
   }
 
@@ -99,6 +122,18 @@
     });
   }
 
+  function setupPeopleCarousels() {
+    document.querySelectorAll('[data-people-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector('.people-carousel__track');
+      const previous = carousel.querySelector('[data-people-prev]');
+      const next = carousel.querySelector('[data-people-next]');
+      const getStep = () => Math.max(track.clientWidth * 0.86, 220);
+      previous.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: reduceMotion ? 'auto' : 'smooth' }));
+    });
+    document.querySelectorAll('[data-placeholder-link]').forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
+  }
+
   function setupMockForm() {
     byId('signForm').addEventListener('submit', (event) => {
       event.preventDefault();
@@ -106,20 +141,24 @@
       const message = form.querySelector('.form-message');
       if (!form.checkValidity()) {
         form.reportValidity();
-        message.textContent = 'Заполните обязательные поля и подтвердите согласие.';
+        message.textContent = '';
         return;
       }
-      message.textContent = 'Спасибо! Это согласовательный макет: данные не отправлены и не сохранены.';
+      message.textContent = '';
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initializePage() {
     typeLoader();
     initializeSignatureCounter();
     initializeFigures();
     setupNavigation();
     setupDialogs();
     setupCarousel();
+    setupPeopleCarousels();
     setupMockForm();
-  });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializePage, { once: true });
+  else initializePage();
 })();
