@@ -62,3 +62,29 @@
   .nav-toggle span{background:var(--yellow)}
   .footer__bottom .brand__mark{width:50px;height:42px}
 }
+
+/* Responsive refinements for the current programme page. */
+.hero__inner .button{width:min(100%,500px);min-width:420px;justify-content:space-between;gap:24px;padding-inline:32px}
+.hero__badge{width:204px;height:204px;padding:23px 22px;align-items:flex-start;justify-content:center;gap:8px;clip-path:none}
+.hero__badge span{font-size:86px;line-height:.72}
+.hero__badge small{margin:0;text-align:left;font-size:13px;line-height:.98;letter-spacing:.02em}
+.figures__title{margin-top:92px;color:var(--blue);font:700 clamp(24px,3vw,38px)/1 var(--display);letter-spacing:-.055em}
+.figures__title+.figures{margin-top:20px;margin-bottom:14px}
+.figures__note{color:var(--muted);font-size:13px;font-style:italic}
+
+/* Desktop-only sizing: the fixed yellow CTA is intentionally more prominent. */
+@media (min-width:761px){
+  .support-fab{min-width:164px;padding:18px 21px;font-size:13px;line-height:1.16}
+}
+
+/* Mobile-only sizing: preserve readable controls without desktop dimensions. */
+@media (max-width:760px){
+  .hero{min-height:790px}
+  .hero__inner .button{width:100%;min-width:0;padding-inline:25px}
+  .hero__badge{display:flex;right:20px;bottom:28px;width:132px;height:132px;padding:15px 14px;gap:5px}
+  .hero__badge span{font-size:58px}
+  .hero__badge small{font-size:10px;line-height:1.02}
+  .figures__title{margin-top:58px;font-size:28px}
+  .figures__title+.figures{margin-top:16px;margin-bottom:12px}
+  .figures__note{font-size:11px}
+}
