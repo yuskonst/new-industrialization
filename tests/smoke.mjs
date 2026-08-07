@@ -42,9 +42,9 @@ expect(css.includes('.hero__lead span{background:none;color:var(--blue)') && css
 expect(html.includes('Новая индустриализация - программа экономического реализма'), 'Не обновлён заголовок стартового экрана');
 expect(html.includes('class="figures__title">Наш вклад в экономику:</p>') && html.includes('class="figures__note">*данные за 2025 год</p>'), 'Не добавлены подписи к экономическим показателям');
 expect(!html.includes('рублей наших налогов') && !html.includes('рублей направлено') && !html.includes('рублей получил') && !html.includes('рублей перечислили'), 'В описаниях показателей не должно быть дублирующего слова «рублей»');
-expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес'), 'Не обновлён ответ о юридических последствиях подписи');
+expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес.'), 'Не обновлён ответ о юридических последствиях подписи');
 expect(css.includes('@media (min-width:761px)') && css.includes('@media (max-width:760px)'), 'Для актуальных правок должны быть отдельные правила desktop и mobile');
-expect(css.includes('.support-fab{min-width:164px') && css.includes('.hero__inner .button{width:min(100%,500px)'), 'CTA-кнопки не получили требуемые размеры');
+expect(css.includes('.support-fab{min-width:280px') && css.includes('.hero__inner .button{position:relative;width:min(100%,500px);min-width:420px;justify-content:center') && css.includes('.hero__inner .button span{position:absolute;right:32px}'), 'CTA-кнопки не получили требуемые размеры и выравнивание');
 
 [
   'Патриотизм — это когда ты хочешь, чтобы твой народ был успешным, состоятельным и многочисленным.',
