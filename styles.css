@@ -81,6 +81,9 @@
 
 /* Mobile-only sizing: preserve readable controls without desktop dimensions. */
 @media (max-width:760px){
+  /* Extends beneath translucent mobile browser controls while the loader is visible. */
+  .loader{overflow:visible}
+  .loader::after{content:"";position:absolute;top:100%;left:0;width:100%;height:120px;height:max(120px,env(safe-area-inset-bottom));background:var(--blue)}
   .hero{min-height:790px}
   .hero__inner .button{width:100%;min-width:0;padding-inline:25px}
   .hero__inner .button span{right:25px}

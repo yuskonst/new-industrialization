@@ -45,6 +45,7 @@ expect(!html.includes('рублей наших налогов') && !html.include
 expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес.'), 'Не обновлён ответ о юридических последствиях подписи');
 expect(css.includes('@media (min-width:761px)') && css.includes('@media (max-width:760px)'), 'Для актуальных правок должны быть отдельные правила desktop и mobile');
 expect(css.includes('.support-fab{min-width:280px') && css.includes('.hero__inner .button{position:relative;width:min(100%,500px);min-width:420px;justify-content:center') && css.includes('.hero__inner .button span{position:absolute;right:32px}'), 'CTA-кнопки не получили требуемые размеры и выравнивание');
+expect(css.includes('.loader::after{content:"";position:absolute;top:100%;left:0;width:100%;height:120px') && css.includes('height:max(120px,env(safe-area-inset-bottom))'), 'У мобильного экрана загрузки должен быть синий нижний запас под панелью браузера');
 
 [
   'Патриотизм — это когда ты хочешь, чтобы твой народ был успешным, состоятельным и многочисленным.',
