@@ -66,6 +66,14 @@ const causesFlow = html.match(/<ol class="causes__flow">([\s\S]*?)<\/ol>/)?.[1] 
 expect((causesFlow.match(/<li>/g) || []).length === 8, 'Схема замкнутого круга должна содержать восемь этапов');
 expect(html.includes('Почему это происходит?') && html.includes('Замкнутый круг ошибок:'), 'Не добавлены заголовки третьего экрана');
 expect(html.includes('Пора включать голову и менять правила.') && html.includes('Новая индустриализация — это справедливое отношение ко всем людям дела и труда.'), 'Не перенесены ключевые выводы третьего экрана');
+expect(count(/class="foundation__pillar"/g) === 3, 'Четвёртый экран должен содержать три опоры новой индустриализации');
+expect(html.includes('Что такое новая индустриализация?') && html.includes('Три кита новой индустриализации:'), 'Не добавлены заголовки четвёртого экрана');
+expect(html.includes('Мягкая денежно-кредитная политика') && html.includes('Стимулирующая налоговая система') && html.includes('Разумный протекционизм'), 'Не добавлены все три опоры новой индустриализации');
+const futureList = html.match(/<ol class="future__list">([\s\S]*?)<\/ol>/)?.[1] ?? '';
+expect((futureList.match(/<li>/g) || []).length === 7, 'Пятый экран должен содержать семь изменений');
+expect(html.includes('Как изменится жизнь в стране с новой индустриализацией?') && html.includes('Я тоже этого хочу'), 'Не добавлены заголовок и кнопка пятого экрана');
+['Будет работа', 'Будут достойные доходы', 'Будут новые технологии', 'Будут жить регионы', 'Будет проще развивать производство', 'Будут появляться свои товары', 'Будет расти село'].forEach((text) => expect(html.includes(text), `Не перенесён пункт пятого экрана: ${text}`));
+expect(!html.includes('class="author section"') && !html.includes('id="authorTitle"'), 'Страница об авторе концепции должна быть удалена');
 expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес.'), 'Не обновлён ответ о юридических последствиях подписи');
 expect(css.includes('@media (min-width:761px)') && css.includes('@media (max-width:760px)'), 'Для актуальных правок должны быть отдельные правила desktop и mobile');
 expect(css.includes('.support-fab{min-width:280px') && css.includes('.hero__inner .button{position:relative;width:min(100%,500px);min-width:420px;justify-content:center') && css.includes('.hero__inner .button span{position:absolute;right:32px}'), 'CTA-кнопки не получили требуемые размеры и выравнивание');
