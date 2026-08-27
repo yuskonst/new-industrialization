@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const config = { loaderTop: 'За новую', loaderBottom: 'Индустриализацию!', counterDuration: 1600 };
+  const config = { loaderTop: 'За новую', loaderBottom: 'Индустриализацию!' };
   const byId = (id) => document.getElementById(id);
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -19,35 +19,6 @@
       else window.setTimeout(() => loader.classList.add('is-done'), reduceMotion ? 0 : 410);
     };
     draw();
-  }
-
-  function formatNumber(value) {
-    return new Intl.NumberFormat('ru-RU').format(Math.round(value));
-  }
-
-  function animateNumber(element, target, duration, suffix = '') {
-    const start = performance.now();
-    const render = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4);
-      element.textContent = `${formatNumber(target * eased)}${suffix}`;
-      if (progress < 1) requestAnimationFrame(render);
-    };
-    requestAnimationFrame(render);
-  }
-
-  function initializeFigures() {
-    const figures = byId('figures');
-    if (!('IntersectionObserver' in window)) {
-      figures.querySelectorAll('[data-counter]').forEach((element) => animateNumber(element, Number(element.dataset.counter), reduceMotion ? 0 : 450, ' ₽'));
-      return;
-    }
-    const observer = new IntersectionObserver((entries, current) => {
-      if (!entries[0].isIntersecting) return;
-      figures.querySelectorAll('[data-counter]').forEach((element) => animateNumber(element, Number(element.dataset.counter), 1700, ' ₽'));
-      current.disconnect();
-    }, { threshold: 0.25 });
-    observer.observe(figures);
   }
 
   function setupNavigation() {
@@ -139,7 +110,6 @@
 
   function initializePage() {
     typeLoader();
-    initializeFigures();
     setupNavigation();
     setupDialogs();
     setupCarousel();

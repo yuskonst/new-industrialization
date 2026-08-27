@@ -81,33 +81,25 @@
       </div>
     </section>
 
-    <section class="manifest section" aria-labelledby="manifestTitle">
+    <section class="causes section" id="reasons" aria-labelledby="causesTitle">
       <div class="shell">
-        <div class="manifest__head">
-          <h2 id="manifestTitle">Россия принадлежит нам!</h2>
-          <p class="manifest__intro">Россия — это люди, которые работают, открывают предприятия, выращивают урожай, развивают технологии, лечат, учат, проектируют, строят и создают новое. Рабочие и инженеры, предприниматели и самозанятые, специалисты в офисах и люди у станка, жители больших городов и малых населённых пунктов.</p>
+        <h2 id="causesTitle">Почему это происходит?</h2>
+        <p class="causes__intro">30 лет назад нам сказали: «Продавай сырьё, дружи с Западом, не строй заводы». Мы до сих пор так и делаем. Но Запад нам больше не друг, а заводов у нас нет. Правила старые — мир новый. <strong>Пора включать голову и менять правила.</strong></p>
+        <h3 class="causes__label">Замкнутый круг ошибок:</h3>
+        <div class="causes__cycle">
+          <ol class="causes__flow">
+            <li><strong>Главная цель — сдержать инфляцию.</strong></li>
+            <li>Удерживаем высокую ключевую ставку.</li>
+            <li>Кредиты дорогие — заводы не берут их на развитие.</li>
+            <li>Курс рубля искусственно завышен.</li>
+            <li><strong>Импорт становится дешёвым — свои товары не выдерживают конкуренции.</strong></li>
+            <li>Производство не обновляется, заводы стоят.</li>
+            <li>Своих товаров мало — покупаем импорт.</li>
+            <li>Рубль ослабевает — инфляция снова растёт.</li>
+          </ol>
+          <p class="causes__cycle-result"><strong>Замкнутый круг:</strong> боремся с инфляцией — убиваем производство — создаём новую инфляцию.</p>
         </div>
-        <p class="figures__title">Наш вклад в экономику:</p>
-        <div class="figures" id="figures" aria-label="Экономические показатели">
-          <article class="figure"><span class="figure__num" data-counter="61200000000000">0</span><p>наших налогов выделено государству в 2025 году</p></article>
-          <article class="figure"><span class="figure__num" data-counter="13000000000000">0</span><p>направлено поступлениями от малого и среднего бизнеса</p></article>
-          <article class="figure"><span class="figure__num" data-counter="9740000000000">0</span><p>получил бюджет с доходов физических лиц</p></article>
-          <article class="figure"><span class="figure__num" data-counter="136000000000">0</span><p>перечислили самозанятые</p></article>
-        </div>
-        <p class="figures__note">*данные за 2025 год</p>
-        <div class="manifest__two-col">
-          <p>Мы умеем решать сложные задачи, брать ответственность и добиваться результата. Наш труд обеспечивает семьи, развивает общество и формирует доходы государства. Поэтому экономическая политика должна видеть в гражданах не объект управления, а главную созидательную силу страны.</p>
-        </div>
-        <div class="people-carousel" data-people-carousel aria-label="Фотографии людей труда">
-          <div class="people-carousel__track">
-            <a class="person-placeholder" href="#" data-placeholder-link aria-label="Будущая ссылка на личную информацию участника"><span>PNG</span></a>
-            <a class="person-placeholder person-placeholder--yellow" href="#" data-placeholder-link aria-label="Будущая ссылка на личную информацию участника"><span>PNG</span></a>
-            <a class="person-placeholder" href="#" data-placeholder-link aria-label="Будущая ссылка на личную информацию участника"><span>PNG</span></a>
-            <a class="person-placeholder" href="#" data-placeholder-link aria-label="Будущая ссылка на личную информацию участника"><span>PNG</span></a>
-          </div>
-          <div class="people-carousel__controls"><button type="button" data-people-prev aria-label="Предыдущая фотография">←</button><button type="button" data-people-next aria-label="Следующая фотография">→</button></div>
-        </div>
-        <p class="manifest__closing">Россия держится на нас. Мы не иждивенцы, которых нужно учить и воспитывать приказом сверху. Мы – хребет экономики России. Её главный резерв и центральная опора. Сегодня, когда воины защищают единую Родину на фронте, рабочие и предприниматели сохраняют экономику России в тылу. Мы не верим фразам «бедный – значит духовный», мы направляем силы духа на достаток для себя и страны. Именно в этом мы видим корень патриотизма. Сильная страна — это страна, где богатство считается достоинством, а не преступлением.</p>
+        <p class="causes__closing">Проблема не в том, что у России нет ресурсов и возможностей для развития. Проблема в правилах, по которым работает экономика. Люди производят ВВП, но живут хуже всех, их голос не слышен, и они не в силах изменить ситуацию. <strong>Новая индустриализация — это справедливое отношение ко всем людям дела и труда.</strong></p>
       </div>
     </section>
 
@@ -196,6 +188,6 @@
   <dialog class="dialog" id="ideaDialog" aria-labelledby="ideaTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><h2 id="ideaTitle">Предложить свою идею</h2><p class="dialog__topic" id="ideaTopic"></p><label>Предложить свою идею<textarea id="ideaText" rows="5" maxlength="700"></textarea></label><button type="button" class="button button--blue" id="ideaSubmit">Предложить свою идею <span>↗</span></button><p class="dialog__message" aria-live="polite"></p></dialog>
   <dialog class="dialog dialog--policy" id="policyDialog" aria-labelledby="policyTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><h2 id="policyTitle">Политика обработки персональных данных</h2></dialog>
 
-  <script src="script.js?v=second-screen" defer></script>
+  <script src="script.js?v=third-screen" defer></script>
 </body>
 </html>

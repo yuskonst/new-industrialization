@@ -14,9 +14,9 @@ expect(count(/class="step"/g) === 10, 'Должно быть ровно 10 ин�
 expect(count(/class="step" open/g) === 0, 'Шаги не должны раскрываться при первой загрузке');
 expect(count(/class="faq__item"/g) === 4, 'Должно быть 4 вопроса в FAQ');
 expect(count(/data-video-slide/g) === 2, 'Должны быть подготовлены 2 видеослайда');
-expect(count(/person-placeholder/g) >= 3, 'Нет резерва под PNG-портреты');
-expect(count(/data-people-carousel/g) === 2, 'Должны быть две карусели с будущими фотографиями');
-expect(count(/data-placeholder-link/g) >= 9, 'Фотографии и ссылки-заглушки должны быть кликабельными');
+expect(count(/supporter-placeholder/g) >= 3, 'Нет резерва под PNG-портреты');
+expect(count(/data-people-carousel/g) === 1, 'Должна быть карусель с будущими фотографиями');
+expect(count(/data-placeholder-link/g) >= 5, 'Фотографии и ссылки-заглушки должны быть кликабельными');
 expect(html.includes('aria-label="Открыть меню"'), 'У мобильного меню отсутствует понятная подпись');
 expect(count(/class="situation__card"/g) === 4, 'На втором экране должно быть четыре информационных блока');
 expect(html.includes('Что происходит с Россией сегодня?'), 'Не обновлён заголовок второго экрана');
@@ -33,7 +33,7 @@ expect(html.includes('action=' ) === false, 'Форма не должна име
 expect(html.includes('required') && html.includes('Политика обработки персональных данных'), 'Форма должна содержать обязательное согласие');
 expect(js.includes('event.preventDefault()'), 'Форма должна предотвращать передачу данных');
 expect(js.includes('showModal()'), 'Интерактивная подсказка должна открываться в окне');
-expect(js.includes("typeof dialog.showModal === 'function'") && js.includes("'IntersectionObserver' in window"), 'Для Android WebView должны быть fallback-механизмы окон и счётчиков');
+expect(js.includes("typeof dialog.showModal === 'function'"), 'Для Android WebView должен быть fallback-механизм окон');
 expect(js.includes("document.readyState === 'loading'"), 'Интерактивы должны запускаться и после быстрой загрузки документа');
 expect(js.includes("window.matchMedia('(max-width: 760px)')") && js.includes('resetAfterViewportChange'), 'Мобильное меню должно сбрасываться при изменении ширины окна');
 expect(css.includes('@media(max-width:760px)'), 'Отсутствует мобильный breakpoint');
@@ -62,8 +62,10 @@ expect(html.includes('Нам нужна страна, где своё дело �
   'Чтобы мы гордились своим качеством и уровнем жизни.',
   'Мы знаем, как этого добиться! Новая индустриализация — реальный план развития экономики России.'
 ].forEach((text) => expect(html.includes(text), `Не перенесён текст первого экрана: ${text}`));
-expect(html.includes('class="figures__title">Наш вклад в экономику:</p>') && html.includes('class="figures__note">*данные за 2025 год</p>'), 'Не добавлены подписи к экономическим показателям');
-expect(!html.includes('рублей наших налогов') && !html.includes('рублей направлено') && !html.includes('рублей получил') && !html.includes('рублей перечислили'), 'В описаниях показателей не должно быть дублирующего слова «рублей»');
+const causesFlow = html.match(/<ol class="causes__flow">([\s\S]*?)<\/ol>/)?.[1] ?? '';
+expect((causesFlow.match(/<li>/g) || []).length === 8, 'Схема замкнутого круга должна содержать восемь этапов');
+expect(html.includes('Почему это происходит?') && html.includes('Замкнутый круг ошибок:'), 'Не добавлены заголовки третьего экрана');
+expect(html.includes('Пора включать голову и менять правила.') && html.includes('Новая индустриализация — это справедливое отношение ко всем людям дела и труда.'), 'Не перенесены ключевые выводы третьего экрана');
 expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес.'), 'Не обновлён ответ о юридических последствиях подписи');
 expect(css.includes('@media (min-width:761px)') && css.includes('@media (max-width:760px)'), 'Для актуальных правок должны быть отдельные правила desktop и mobile');
 expect(css.includes('.support-fab{min-width:280px') && css.includes('.hero__inner .button{position:relative;width:min(100%,500px);min-width:420px;justify-content:center') && css.includes('.hero__inner .button span{position:absolute;right:32px}'), 'CTA-кнопки не получили требуемые размеры и выравнивание');
