@@ -36,17 +36,6 @@
     requestAnimationFrame(render);
   }
 
-  function initializeSignatureCounter() {
-    const counter = document.querySelector('.counter');
-    const value = Number(counter.dataset.value);
-    const goal = Number(counter.dataset.goal);
-    if (!Number.isFinite(value)) return;
-    const percent = Math.round((value / goal) * 100);
-    animateNumber(byId('signatureCount'), value, config.counterDuration);
-    byId('counterPercent').textContent = `${percent}%`;
-    byId('counterBar').style.width = `${percent}%`;
-  }
-
   function initializeFigures() {
     const figures = byId('figures');
     if (!('IntersectionObserver' in window)) {
@@ -150,7 +139,6 @@
 
   function initializePage() {
     typeLoader();
-    initializeSignatureCounter();
     initializeFigures();
     setupNavigation();
     setupDialogs();
