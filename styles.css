@@ -94,3 +94,26 @@
   .figures__title+.figures{margin-top:16px;margin-bottom:12px}
   .figures__note{font-size:11px}
 }
+
+/* First screen: the client-approved programme statement. */
+.hero--programme{min-height:1040px;align-items:flex-start;padding-bottom:150px}
+.hero--programme .hero__inner{padding-top:clamp(132px,14vw,182px);padding-bottom:42px;max-width:980px}
+.hero--programme h1{max-width:930px;text-transform:uppercase}
+.hero__subtitle{max-width:930px;margin-top:clamp(28px,4vw,54px);font:600 clamp(22px,2.2vw,32px)/1.26 var(--display);letter-spacing:-.04em}
+.hero__points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 40px;max-width:1000px;margin:clamp(30px,4vw,52px) 0;padding:0;list-style:none}
+.hero__points li{position:relative;padding-left:22px;font:700 clamp(17px,1.55vw,23px)/1.28 var(--display);letter-spacing:-.025em}
+.hero__points li::before{content:"";position:absolute;top:.47em;left:0;width:8px;height:8px;background:var(--yellow);border:2px solid var(--blue)}
+.hero__closing{max-width:850px;margin-bottom:34px;font:600 clamp(20px,1.9vw,28px)/1.28 var(--display);letter-spacing:-.035em}
+.hero--programme .hero__badge{bottom:54px}
+
+@media (max-width:760px){
+  .hero--programme{min-height:auto;padding-top:0;padding-bottom:84px}
+  .hero--programme .hero__inner{padding-top:126px;padding-bottom:110px}
+  .hero--programme h1{font-size:clamp(47px,13vw,74px)}
+  .hero__subtitle{margin-top:28px;font-size:23px}
+  .hero__points{grid-template-columns:1fr;gap:13px;margin:31px 0}
+  .hero__points li{padding-left:20px;font-size:18px}
+  .hero__closing{margin-bottom:30px;font-size:21px}
+  .hero--programme .hero__badge{display:none}
+  .hero--programme .hero__side{top:auto;bottom:26px}
+}
