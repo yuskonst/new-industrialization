@@ -191,6 +191,9 @@
 .future__list p+p{margin-top:12px;color:#fff;font-weight:700}
 .future__button{margin-top:clamp(42px,6vw,80px);min-width:min(100%,420px);font-size:clamp(15px,1.5vw,19px);padding:23px 34px}
 
+/* Approved yellow call-to-actions in the programme flow. */
+.hero__inner .button--blue,.why .button--outline{background:var(--yellow);border-color:var(--yellow);color:var(--blue-deep)}
+
 @media(min-width:761px){
   .future__list li:last-child{grid-column:1/-1;min-height:280px}
   .future__list li:last-child article{max-width:760px}
