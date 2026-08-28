@@ -109,7 +109,7 @@
 @media (max-width:760px){
   .hero--programme{min-height:auto;padding-top:0;padding-bottom:84px}
   .hero--programme .hero__inner{padding-top:126px;padding-bottom:110px}
-  .hero--programme h1{font-size:clamp(47px,13vw,74px)}
+  .hero--programme h1{font-size:clamp(30px,8.4vw,33px);letter-spacing:-.055em;overflow-wrap:normal;hyphens:manual}
   .hero__subtitle{margin-top:28px;font-size:23px}
   .hero__points{grid-template-columns:1fr;gap:13px;margin:31px 0}
   .hero__points li{padding-left:20px;font-size:18px}
