@@ -43,7 +43,8 @@ expect(!html.includes('↘'), 'В CTA не должно оставаться с�
 expect(html.includes('200 000 подписей — это голос'), 'В FAQ должна быть актуальная цель в 200 000 подписей');
 expect(!html.includes('Миллион подписей'), 'В FAQ не должно остаться упоминания миллиона подписей');
 expect(html.includes('в течение трех рабочих дней'), 'Срок удаления данных должен быть записан словом');
-expect(css.includes('--yellow:#ffff00'), 'Не восстановлен акцентный цвет #ffff00');
+['--blue:#26358c', '--blue-deep:#2d2378', '--blue-soft:#404695', '--yellow:#f2e60e', '--yellow-light:#f3eb81', '--yellow-deep:#edc012'].forEach((token) => expect(css.includes(token), `В стилях отсутствует цвет брендбука ${token}`));
+expect(css.includes('"Museo Sans Cyrl"') && css.includes('"Museo Sans Cyrillic"'), 'Не настроен стек шрифтов Museo Sans Cyrillic');
 expect(css.includes('.nav{position:static') && css.includes('gap:30px'), 'Верхнее меню должно быть возвращено к исходному расположению справа');
 expect(css.includes("content:'«'") && css.includes("content:'»'") && css.includes('top:50%') && css.includes('translateY(-50%)') && css.includes('background:transparent'), 'Цитата должна быть без тёмной подложки и с симметричными кавычками');
 expect(count(/assets\/logo-ni\.png/g) === 3, 'Предоставленный PNG-логотип должен использоваться в загрузчике, шапке и подвале');
