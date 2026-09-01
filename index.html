@@ -59,27 +59,26 @@
 
     <section class="situation section" id="program" aria-labelledby="situationTitle">
       <div class="shell">
-        <p class="eyebrow eyebrow--yellow">02 · Сегодня</p>
-        <h2 id="situationTitle">Что происходит с Россией сегодня?</h2>
-        <div class="situation__grid">
+        <h2 id="situationTitle" data-reveal>Что происходит с Россией сегодня?</h2>
+        <div class="situation__grid" data-reveal>
           <article class="situation__card">
-            <h3>Отставание в экономике</h3>
+            <div class="situation__card-head"><img src="assets/situation-economy.png" alt="" aria-hidden="true"><h3>Отставание в экономике</h3></div>
             <p>Печальная динамика ВВП: последние двадцать лет темп роста ВВП России составляет в среднем <mark>2% в год</mark>.</p>
           </article>
           <article class="situation__card">
-            <h3>Отставание в производстве</h3>
+            <div class="situation__card-head"><img src="assets/situation-production.png" alt="" aria-hidden="true"><h3>Отставание в производстве</h3></div>
             <p>Большую часть необходимой продукции и технологий приходится закупать за рубежом: в 2025 году экспорт машин и оборудования составил $23,4 млрд, импорт — <mark>$147,1 млрд</mark>.</p>
           </article>
           <article class="situation__card">
-            <h3>Пустеющие регионы</h3>
+            <div class="situation__card-head"><img src="assets/situation-regions.png" alt="" aria-hidden="true"><h3>Пустеющие регионы</h3></div>
             <p>Люди уезжают туда, где есть работа и возможности: по данным Росстата, в ряде регионов население сокращается на 1–2% в год, а в наиболее проблемных территориях — на <mark>5–10%</mark>.</p>
           </article>
           <article class="situation__card">
-            <h3>Заброшенные земли</h3>
+            <div class="situation__card-head"><img src="assets/situation-agriculture.png" alt="" aria-hidden="true"><h3>Заброшенные земли</h3></div>
             <p>Сельское хозяйство теряет производственный потенциал: около <mark>19,4 млн га неиспользуемой пашни</mark>, по данным Правительства.</p>
           </article>
         </div>
-        <p class="situation__closing">Эти проблемы связаны между собой. Если в регионе нет производства — нет работы. Если нет работы — люди уезжают. Если производство не развивается — не растут доходы и технологические возможности страны.</p>
+        <p class="situation__closing" data-reveal>Эти проблемы связаны между собой. Если в регионе нет производства — нет работы. Если нет работы — люди уезжают. Если производство не развивается — не растут доходы и технологические возможности страны.</p>
       </div>
     </section>
 
@@ -205,6 +204,6 @@
   <dialog class="dialog" id="ideaDialog" aria-labelledby="ideaTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><h2 id="ideaTitle">Предложить свою идею</h2><p class="dialog__topic" id="ideaTopic"></p><label>Предложить свою идею<textarea id="ideaText" rows="5" maxlength="700"></textarea></label><button type="button" class="button button--blue" id="ideaSubmit">Предложить свою идею <span>↗</span></button><p class="dialog__message" aria-live="polite"></p></dialog>
   <dialog class="dialog dialog--policy" id="policyDialog" aria-labelledby="policyTitle"><button class="dialog__close" type="button" data-dialog-close aria-label="Закрыть">×</button><h2 id="policyTitle">Политика обработки персональных данных</h2></dialog>
 
-  <script src="script.js?v=fourth-fifth-screen" defer></script>
+  <script src="script.js?v=block-two-reveal" defer></script>
 </body>
 </html>

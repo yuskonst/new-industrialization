@@ -122,7 +122,9 @@
 .situation{overflow:hidden;background:var(--blue);color:#fff}
 .situation h2{max-width:1040px;color:#fff;font-size:clamp(48px,6.8vw,100px);text-transform:uppercase}
 .situation__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:clamp(45px,7vw,88px);border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.55)}
-.situation__card{min-height:250px;padding:clamp(24px,3vw,42px);background:var(--blue);display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+.situation__card{min-height:270px;padding:clamp(24px,3vw,42px);background:var(--blue);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.situation__card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.situation__card-head img{display:block;width:92px;height:92px;flex:none;object-fit:cover;object-position:center}
 .situation__card h3{margin:0;font:700 clamp(24px,3vw,40px)/1 var(--display);letter-spacing:-.05em;text-transform:uppercase}
 .situation__card p{max-width:560px;font-size:clamp(17px,1.65vw,23px);line-height:1.35;letter-spacing:-.025em}
 .situation mark{display:inline;background:var(--yellow);color:var(--ink);padding:0 .12em}
@@ -131,7 +133,9 @@
 @media(max-width:760px){
   .situation h2{font-size:clamp(43px,11.5vw,60px)}
   .situation__grid{grid-template-columns:1fr;margin-top:40px}
-  .situation__card{min-height:0;padding:25px 20px;gap:18px}
+  .situation__card{min-height:0;padding:24px 20px;gap:18px}
+  .situation__card-head{align-items:center;gap:17px}
+  .situation__card-head img{width:76px;height:76px}
   .situation__card h3{font-size:25px}
   .situation__card p{font-size:18px}
   .situation__closing{margin-top:45px;font-size:28px}
@@ -327,3 +331,7 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
 
 .hero__points li img{object-fit:cover;object-position:center}
 .support-fab{display:none}
+
+/* Elements of the updated blocks enter softly as the reader reaches them. */
+.has-js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .58s ease,transform .58s ease}
+.has-js [data-reveal].is-visible{opacity:1;transform:none}

@@ -1,6 +1,8 @@
 (() => {
   'use strict';
 
+  document.documentElement.classList.add('has-js');
+
   const config = { loaderTop: 'За новую', loaderBottom: 'Индустриализацию!' };
   const byId = (id) => document.getElementById(id);
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -94,6 +96,24 @@
     document.querySelectorAll('[data-placeholder-link]').forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
   }
 
+  function setupReveals() {
+    const elements = [...document.querySelectorAll('[data-reveal]')];
+    if (!elements.length) return;
+    const reveal = (element) => element.classList.add('is-visible');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      elements.forEach(reveal);
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        reveal(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14 });
+    elements.forEach((element) => observer.observe(element));
+  }
+
   function setupMockForm() {
     byId('signForm').addEventListener('submit', (event) => {
       event.preventDefault();
@@ -114,6 +134,7 @@
     setupDialogs();
     setupCarousel();
     setupPeopleCarousels();
+    setupReveals();
     setupMockForm();
   }
 

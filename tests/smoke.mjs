@@ -20,6 +20,9 @@ expect(count(/data-placeholder-link/g) >= 5, 'Фотографии и ссылк
 expect(html.includes('aria-label="Открыть меню"'), 'У мобильного меню отсутствует понятная подпись');
 expect(count(/class="situation__card"/g) === 4, 'На втором экране должно быть четыре информационных блока');
 expect(html.includes('Что происходит с Россией сегодня?'), 'Не обновлён заголовок второго экрана');
+expect(!html.includes('02 · Сегодня'), 'Во втором блоке не должно остаться подписи «02 · Сегодня»');
+expect(count(/assets\/situation-(economy|production|regions|agriculture)\.png/g) === 4, 'Для проблем второго блока должны использоваться четыре предоставленные иллюстрации');
+expect(css.includes('.situation__card-head img{display:block;width:92px;height:92px') && css.includes('.situation__card-head img{width:76px;height:76px}'), 'Иконки второго блока должны быть адаптированы для desktop и mobile');
 [
   'Отставание в экономике',
   'Печальная динамика ВВП: последние двадцать лет темп роста ВВП России составляет в среднем',
@@ -36,6 +39,7 @@ expect(js.includes('showModal()'), 'Интерактивная подсказк�
 expect(js.includes("typeof dialog.showModal === 'function'"), 'Для Android WebView должен быть fallback-механизм окон');
 expect(js.includes("document.readyState === 'loading'"), 'Интерактивы должны запускаться и после быстрой загрузки документа');
 expect(js.includes("window.matchMedia('(max-width: 760px)')") && js.includes('resetAfterViewportChange'), 'Мобильное меню должно сбрасываться при изменении ширины окна');
+expect(js.includes('IntersectionObserver') && js.includes('[data-reveal]'), 'Для обновлённых блоков должен быть настроен эффект появления при прокрутке');
 expect(css.includes('@media(max-width:760px)'), 'Отсутствует мобильный breakpoint');
 expect(css.includes('position:fixed;z-index:1;top:74px') && css.includes('min-height:calc(100dvh - 74px)'), 'Мобильное меню должно открываться отдельной непрозрачной панелью');
 expect(css.includes('prefers-reduced-motion'), 'Не учтено предпочтение уменьшенной анимации');
