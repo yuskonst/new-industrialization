@@ -497,3 +497,18 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
   .future__list p{max-width:none;margin:8px 0 0;font-size:13px;line-height:1.26}
   .future__button{width:100%;min-height:68px;margin-top:30px;font-size:23px}
 }
+
+/* Footer top brand lockup, replacing the removed tagline. */
+.footer__top{flex-wrap:wrap;row-gap:24px}
+.footer__top-brand{color:#fff}
+.footer__top-brand .brand__mark{width:64px;height:53px}
+.footer__top-brand .brand__copy{font-size:14px;line-height:1.05}
+.footer__top-brand .brand__copy i{color:#fff}
+.footer__top-brand .brand__copy b{color:var(--yellow)}
+.footer__resources button{display:inline-flex;align-items:center;justify-content:center;padding:0;transition:background .2s,border-color .2s}
+.footer__resources button:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.footer__resources svg{width:20px;height:20px}
+@media(max-width:760px){
+  .footer__top-brand .brand__mark{width:50px;height:42px}
+  .footer__top-brand .brand__copy{font-size:11px}
+}
