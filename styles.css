@@ -448,3 +448,52 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
   .foundation__card-rule{width:40px;height:3px;margin-top:12px}
   .foundation__pillar p{max-width:286px;margin-top:13px;font-size:17px;line-height:1.25}
 }
+
+/* Fifth screen: benefits shown as image-led cards. */
+.future{
+  padding-block:clamp(72px,6.7vw,94px) clamp(82px,7.4vw,108px);
+  overflow:hidden;
+  background:radial-gradient(circle at 50% 43%,rgba(68,46,167,.42),transparent 42%),linear-gradient(145deg,#09064b 0%,#160d77 53%,#09064b 100%);
+  color:#fff;
+}
+.future__inner{max-width:1280px;margin-inline:auto;text-align:center}
+.future__head{max-width:840px;margin-inline:auto}
+.future h2{margin:0;color:#fff;font:800 clamp(44px,4.2vw,61px)/.96 var(--display);letter-spacing:-.062em;text-transform:uppercase}
+.future__rule{display:block;width:67px;height:4px;margin:21px auto 0;border-radius:999px;background:var(--yellow)}
+.future__intro{max-width:690px;margin:17px auto 0;color:#fff;font:500 clamp(17px,1.35vw,20px)/1.35 var(--body);letter-spacing:-.025em}
+.future__list{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 28px;margin:32px 0 0;padding:0;list-style:none;background:none}
+.future__list li{display:flex;grid-column:span 3;min-height:284px;box-sizing:border-box;align-items:center;flex-direction:column;padding:14px 19px 18px;border:1px solid rgba(167,151,255,.55);border-radius:16px;background:linear-gradient(145deg,rgba(55,34,142,.42),rgba(13,9,90,.5));color:#fff}
+.future__list li:last-child{grid-column:auto;min-height:284px}
+.future__list li:nth-child(5){grid-column:3/span 3}
+.future__list li:nth-child(6){grid-column:6/span 3}
+.future__list li:nth-child(7){grid-column:9/span 3}
+.future__media{display:flex;align-items:center;flex-direction:column}
+.future__media>span{display:block;color:var(--yellow);font:800 24px/1 var(--display);letter-spacing:-.04em}
+.future__media img{display:block;width:92px;height:82px;margin-top:5px;object-fit:contain}
+.future__list article{display:flex;max-width:none;align-items:center;flex-direction:column}
+.future__list h3{margin:7px 0 0;color:#fff;font:800 clamp(18px,1.35vw,21px)/1.02 var(--display);letter-spacing:-.043em;text-transform:uppercase}
+.future__card-rule{display:block;width:33px;height:3px;margin:11px auto 0;border-radius:999px;background:var(--yellow)}
+.future__list p{max-width:260px;margin:11px auto 0;color:#fff;font:500 14px/1.35 var(--body);letter-spacing:-.022em}
+.future__list p+p{margin-top:0;color:#fff;font-weight:500}
+.future__button{display:flex;width:min(100%,840px);min-height:84px;align-items:center;justify-content:center;margin:42px auto 0;padding:19px 30px;border:0;border-radius:0;background:var(--yellow);color:var(--blue-deep);font:800 clamp(24px,2.6vw,36px)/1 var(--display);letter-spacing:-.035em;text-transform:uppercase}
+.future__button:hover{background:#fff36a;color:var(--blue-deep)}
+
+@media(max-width:760px){
+  .future{padding-block:69px 64px;background:radial-gradient(circle at 50% 44%,rgba(68,46,167,.42),transparent 38%),linear-gradient(160deg,#09064b 0%,#160d77 53%,#09064b 100%)}
+  .future__inner{width:var(--shell)}
+  .future__head{max-width:360px}
+  .future h2{font-size:27px;line-height:.97;letter-spacing:-.065em}
+  .future h2 span{display:block;white-space:nowrap;font-size:20px;letter-spacing:-.055em}
+  .future__rule{width:57px;height:4px;margin-top:17px}
+  .future__intro{max-width:340px;margin-top:17px;font-size:17px;line-height:1.38}
+  .future__list{grid-template-columns:1fr;gap:14px;margin-top:28px}
+  .future__list li,.future__list li:last-child,.future__list li:nth-child(5),.future__list li:nth-child(6),.future__list li:nth-child(7){display:grid;grid-column:auto;grid-template-columns:108px minmax(0,1fr);min-height:0;align-items:center;padding:12px 13px 12px 15px;border-radius:15px;text-align:left}
+  .future__media{min-height:104px;justify-content:center}
+  .future__media>span{align-self:flex-start;margin-left:6px;font-size:24px}
+  .future__media img{width:94px;height:72px;margin:3px auto 0}
+  .future__list article{min-height:104px;align-items:flex-start;justify-content:center;padding-left:14px;border-left:1px solid rgba(255,255,255,.48)}
+  .future__list h3{margin:0;font-size:18px;line-height:1.01}
+  .future__card-rule{display:none}
+  .future__list p{max-width:none;margin:8px 0 0;font-size:13px;line-height:1.26}
+  .future__button{width:100%;min-height:68px;margin-top:30px;font-size:23px}
+}
