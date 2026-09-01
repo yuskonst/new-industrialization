@@ -404,3 +404,47 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
   .causes__paradox{align-items:flex-start;gap:12px;min-height:0;margin-top:31px;padding:14px 15px;border-radius:15px;font-size:17px;line-height:1.24}
   .causes__paradox-icon{width:48px;height:48px;margin-top:1px;font-size:33px}
 }
+
+/* Fourth screen: the three pillars of the new industrialisation. */
+.foundation{
+  overflow:hidden;
+  padding-block:clamp(78px,7.8vw,112px) clamp(82px,7.5vw,108px);
+  background:radial-gradient(circle at 50% 32%,rgba(36,75,178,.55),transparent 45%),linear-gradient(135deg,#061857 0%,#082d8c 52%,#061857 100%);
+  color:#fff;
+}
+.foundation__inner{max-width:1134px;margin-inline:auto;text-align:center}
+.foundation__head{max-width:830px;margin-inline:auto}
+.foundation h2{max-width:none;margin:0;color:#fff;font:800 clamp(48px,5.25vw,68px)/.94 var(--display);letter-spacing:-.057em;text-transform:uppercase}
+.foundation__rule{display:block;width:80px;height:5px;margin:25px auto 0;border-radius:999px;background:var(--yellow)}
+.foundation__intro{max-width:785px;margin:21px auto 0;color:#fff;font:500 clamp(17px,1.45vw,21px)/1.49 var(--body);letter-spacing:-.023em;font-style:normal}
+.foundation__pillars-heading{margin-top:clamp(61px,6.6vw,90px)}
+.foundation__label{margin:0;color:#fff;font:800 clamp(27px,3vw,36px)/1 var(--display);letter-spacing:-.053em;text-transform:uppercase}
+.foundation__pillars-heading .foundation__rule{width:66px;height:4px;margin-top:20px}
+.foundation__pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:36px;border:0}
+.foundation__pillar{position:relative;display:flex;min-height:456px;box-sizing:border-box;align-items:center;flex-direction:column;padding:29px 22px 30px;border:0;border-radius:11px;background:#fff;color:var(--blue-deep)}
+.foundation__pillar+.foundation__pillar{border:0}
+.foundation__pillar>.foundation__number{position:absolute;top:-20px;left:50%;display:grid;width:52px;height:52px;place-items:center;transform:translateX(-50%);border-radius:50%;background:var(--yellow);color:var(--blue-deep);font:800 19px/1 var(--display);letter-spacing:0}
+.foundation__art{display:grid;width:100%;height:231px;place-items:center;overflow:hidden}
+.foundation__art img{display:block;width:auto;height:340px;max-width:none;object-fit:contain}
+.foundation__pillar h4{margin:8px 0 0;color:var(--blue-deep);font:800 clamp(23px,2vw,28px)/.98 var(--display);letter-spacing:-.054em;text-transform:uppercase}
+.foundation__card-rule{display:block;width:43px;height:4px;margin:14px auto 0;border-radius:999px;background:var(--yellow)}
+.foundation__pillar p{max-width:280px;margin:15px auto 0;color:#202737;font:500 16px/1.38 var(--body);letter-spacing:-.025em}
+
+@media(max-width:760px){
+  .foundation{padding-block:68px 62px;background:radial-gradient(circle at 50% 25%,rgba(36,75,178,.52),transparent 43%),linear-gradient(145deg,#061857 0%,#082d8c 54%,#061857 100%)}
+  .foundation__inner{width:var(--shell)}
+  .foundation h2{font-size:clamp(33px,9.7vw,40px);line-height:.94;letter-spacing:-.06em}
+  .foundation__rule{width:58px;height:4px;margin-top:19px}
+  .foundation__intro{max-width:350px;margin-top:20px;font-size:18px;line-height:1.39;letter-spacing:-.02em}
+  .foundation__pillars-heading{margin-top:38px}
+  .foundation__label{max-width:340px;margin-inline:auto;font-size:27px;line-height:.98;letter-spacing:-.057em}
+  .foundation__pillars-heading .foundation__rule{width:56px;height:4px;margin-top:17px}
+  .foundation__pillars{grid-template-columns:1fr;gap:17px;max-width:330px;margin:33px auto 0}
+  .foundation__pillar{min-height:338px;padding:27px 15px 21px;border-radius:15px}
+  .foundation__pillar>.foundation__number{top:-18px;width:48px;height:48px;font-size:18px}
+  .foundation__art{height:184px}
+  .foundation__art img{width:auto;height:280px;max-width:none}
+  .foundation__pillar h4{margin-top:4px;font-size:24px;line-height:.98}
+  .foundation__card-rule{width:40px;height:3px;margin-top:12px}
+  .foundation__pillar p{max-width:286px;margin-top:13px;font-size:17px;line-height:1.25}
+}
