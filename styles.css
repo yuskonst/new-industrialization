@@ -361,10 +361,10 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
 .causes__step p{margin:3px 0 0;color:var(--blue-deep);font:500 10px/1.18 var(--body);letter-spacing:-.025em}
 .causes__step--1{top:0;left:calc(50% - 108px)}
 .causes__step--2{top:75px;right:auto;left:calc(50% + 118px)}
-.causes__step--3{top:202px;right:auto;left:calc(50% + 118px)}
+.causes__step--3{top:202px;right:auto;left:calc(50% + 150px)}
 .causes__step--4{top:328px;right:auto;left:calc(50% + 30px)}
 .causes__step--5{top:328px;left:calc(50% - 248px)}
-.causes__step--6{top:226px;left:calc(50% - 367px)}
+.causes__step--6{top:210px;left:calc(50% - 367px)}
 .causes__step--7{top:75px;left:calc(50% - 363px)}
 .causes__paradox{display:flex;align-items:center;gap:15px;max-width:594px;min-height:70px;box-sizing:border-box;margin:0 auto;padding:11px 22px;border-radius:10px;background:var(--blue);color:#fff;font:500 17px/1.22 var(--body);letter-spacing:-.025em}
 .causes__paradox-icon{display:grid;width:48px;height:48px;flex:none;place-items:center;border-radius:50%;background:var(--yellow);color:var(--blue-deep)}
@@ -375,10 +375,10 @@ h1,h2,h3,h4,.button,.eyebrow,.brand__copy,.loader__type{font-family:var(--displa
   .causes__kicker,.causes h2,.causes__intro{margin-left:27px}
   .causes__step--1{top:0;left:calc(50% - 108px);right:auto}
   .causes__step--2{top:75px;left:calc(50% + 118px);right:auto}
-  .causes__step--3{top:202px;left:calc(50% + 118px);right:auto}
+  .causes__step--3{top:202px;left:calc(50% + 150px);right:auto}
   .causes__step--4{top:328px;left:calc(50% + 30px);right:auto}
   .causes__step--5{top:328px;left:calc(50% - 248px);right:auto}
-  .causes__step--6{top:226px;left:calc(50% - 367px);right:auto}
+  .causes__step--6{top:210px;left:calc(50% - 367px);right:auto}
   .causes__step--7{top:75px;left:calc(50% - 363px);right:auto}
   /* Bigger round icons inside each ring card, fitted into the exact same footprint (text column stays
      ~108px and card height is untouched) so nothing shifts — the circle, the cards' outer edges and the
