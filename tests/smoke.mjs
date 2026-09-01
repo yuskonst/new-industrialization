@@ -51,8 +51,8 @@ expect(count(/assets\/logo-ni\.png/g) === 3, 'Предоставленный PNG
 expect(!html.includes('assets/logo-ni.svg'), 'Старая вручную собранная SVG-версия логотипа не должна оставаться в разметке');
 expect(css.includes('.header{background:var(--blue)') && css.includes('.nav a,.nav a+a:before{color:var(--yellow)}'), 'Шапка должна быть синей, а пункты меню — жёлтыми');
 expect(css.includes('.hero__lead span{background:none;color:var(--blue)') && css.includes('.steps__quote:before,.steps__quote:after{color:var(--blue)}'), 'Акцент в hero и кавычки должны быть синими');
-expect(html.includes('Новая индустриализация</h1>'), 'Не обновлён заголовок стартового экрана');
-expect(html.includes('href="#program">Программа</a>') && html.includes('href="#steps">10 шагов</a>') && html.includes('href="#faq">Вопросы</a>') && html.includes('href="#support">Поддержать</a>'), 'Верхняя панель первого экрана не должна меняться');
+expect(html.includes('<span>Новая</span> <span>индустриализация</span>'), 'Не обновлён заголовок стартового экрана');
+expect(html.includes('href="#program">О программе</a>') && html.includes('href="#future">Цели</a>') && html.includes('href="#support">Поддержать</a>'), 'Верхняя панель не соответствует утверждённой навигации');
 expect(html.includes('class="button button--blue" href="#support">Поддержать программу'), 'На первом экране должна остаться кнопка поддержки');
 expect(html.includes('Нам нужна страна, где своё дело и работа дают счастливую и безбедную жизнь'), 'Не добавлен подзаголовок первого экрана');
 [
@@ -78,7 +78,9 @@ expect(!html.includes('class="author section"') && !html.includes('id="authorTit
 expect(html.includes('Подпись не несёт юридических последствий. Отдав подпись за Новую Индустриализацию вы поддержите программу и усилите её политический вес.'), 'Не обновлён ответ о юридических последствиях подписи');
 expect(css.includes('@media (min-width:761px)') && css.includes('@media (max-width:760px)'), 'Для актуальных правок должны быть отдельные правила desktop и mobile');
 expect(css.includes('.support-fab{min-width:280px') && css.includes('.hero__inner .button{position:relative;width:min(100%,500px);min-width:420px;justify-content:center') && css.includes('.hero__inner .button span{position:absolute;right:32px}'), 'CTA-кнопки не получили требуемые размеры и выравнивание');
-expect(css.includes('.hero--programme h1{font-size:clamp(30px,8.4vw,33px);letter-spacing:-.055em;overflow-wrap:normal;hyphens:manual}'), 'Мобильный заголовок должен сохранять слово «индустриализация» целиком');
+expect(css.includes('.hero--programme h1 span:last-child{white-space:nowrap}') && css.includes('word-break:keep-all'), 'Мобильный заголовок должен сохранять слово «индустриализация» целиком');
+expect(html.includes('assets/hero-industrialization-desktop.png') && html.includes('assets/hero-industrialization-mobile.png'), 'Для первого экрана должны использоваться desktop- и mobile-версии иллюстрации');
+expect(count(/assets\/goal-(family|industry|agriculture|income|pride)\.png/g) === 5, 'Для целей первого экрана должны использоваться пять предоставленных иллюстраций');
 expect(css.includes('.loader::after{content:"";position:absolute;top:100%;left:0;width:100%;height:120px') && css.includes('height:max(120px,env(safe-area-inset-bottom))'), 'У мобильного экрана загрузки должен быть синий нижний запас под панелью браузера');
 
 [
