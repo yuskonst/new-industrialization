@@ -50,7 +50,7 @@ expect(html.includes('в течение трех рабочих дней'), 'С�
 expect(css.includes('"Museo Sans Cyrl"') && css.includes('"Museo Sans Cyrillic"'), 'Не настроен стек шрифтов Museo Sans Cyrillic');
 expect(css.includes('.nav{position:static') && css.includes('gap:30px'), 'Верхнее меню должно быть возвращено к исходному расположению справа');
 expect(css.includes("content:'«'") && css.includes("content:'»'") && css.includes('top:50%') && css.includes('translateY(-50%)') && css.includes('background:transparent'), 'Цитата должна быть без тёмной подложки и с симметричными кавычками');
-expect(count(/assets\/logo-ni\.png/g) === 4, 'Предоставленный PNG-логотип должен использоваться в загрузчике, шапке и дважды в подвале');
+expect(count(/assets\/logo-ni\.png/g) === 3, 'Предоставленный PNG-логотип должен использоваться в загрузчике, шапке и подвале');
 expect(!html.includes('assets/logo-ni.svg'), 'Старая вручную собранная SVG-версия логотипа не должна оставаться в разметке');
 expect(css.includes('.header{background:var(--blue)') && css.includes('.nav a,.nav a+a:before{color:var(--yellow)}'), 'Шапка должна быть синей, а пункты меню — жёлтыми');
 expect(css.includes('.hero__lead span{background:none;color:var(--blue)') && css.includes('.steps__quote:before,.steps__quote:after{color:var(--blue)}'), 'Акцент в hero и кавычки должны быть синими');
