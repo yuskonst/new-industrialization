@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#26358c">
   <title>За новую индустриализацию!</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=brandbook-palette">
+  <link rel="stylesheet" href="styles.css?v=causes-arrow-uncropped-2">
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>
@@ -83,24 +83,37 @@
     </section>
 
     <section class="causes section" id="reasons" aria-labelledby="causesTitle">
-      <div class="shell">
-        <h2 id="causesTitle">Почему это происходит?</h2>
-        <p class="causes__intro">30 лет назад нам сказали: «Продавай сырьё, дружи с Западом, не строй заводы». Мы до сих пор так и делаем. Но Запад нам больше не друг, а заводов у нас нет. Правила старые — мир новый. <strong>Пора включать голову и менять правила.</strong></p>
-        <h3 class="causes__label">Замкнутый круг ошибок:</h3>
-        <div class="causes__cycle">
+      <div class="shell causes__inner" data-reveal>
+        <p class="causes__kicker">Почему это происходит</p>
+        <h2 id="causesTitle">Замкнутый круг ошибок</h2>
+        <p class="causes__intro">Экономические решения, которые должны помочь, в итоге создают условия для новой инфляции.</p>
+        <div class="causes__diagram">
+          <svg class="causes__arrows" viewBox="0 0 1090 426" preserveAspectRatio="none" aria-hidden="true">
+            <defs><marker id="cycleArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker></defs>
+            <path d="M 645 47 C 660 48 673 56 682 65" marker-end="url(#cycleArrow)" />
+            <path d="M 840 165 C 858 176 862 187 854 195" marker-end="url(#cycleArrow)" />
+            <path d="M 850 298 C 856 312 838 323 806 326" marker-end="url(#cycleArrow)" />
+            <path d="M 575 375 C 557 385 537 386 522 378" marker-end="url(#cycleArrow)" />
+            <path d="M 297 374 C 260 355 245 324 250 300" marker-end="url(#cycleArrow)" />
+            <path d="M 265 202 C 255 187 254 175 258 167" marker-end="url(#cycleArrow)" />
+            <path d="M 398 124 C 405 94 414 70 422 57" marker-end="url(#cycleArrow)" />
+          </svg>
+          <div class="causes__core">
+        <span class="causes__cycle-badge" aria-hidden="true"><img class="causes__cycle-icon" src="assets/cycle-arrows.png?v=2" alt=""></span>
+            <h3>Замкнутый<br>круг</h3>
+            <p>Боремся с инфляцией — ослабляем производство — снова получаем<br>инфляцию</p>
+          </div>
           <ol class="causes__flow">
-            <li><strong>Главная цель — сдержать инфляцию.</strong></li>
-            <li>Удерживаем высокую ключевую ставку.</li>
-            <li>Кредиты дорогие — заводы не берут их на развитие.</li>
-            <li>Курс рубля искусственно завышен.</li>
-            <li><strong>Импорт становится дешёвым — свои товары не выдерживают конкуренции.</strong></li>
-            <li>Производство не обновляется, заводы стоят.</li>
-            <li>Своих товаров мало — покупаем импорт.</li>
-            <li>Рубль ослабевает — инфляция снова растёт.</li>
+            <li class="causes__step causes__step--1"><span class="causes__number">1</span><img src="assets/cause-inflation-goal.png" alt="" aria-hidden="true"><div><h3>Сдержать инфляцию</h3><p>Это становится главной целью экономической политики.</p></div></li>
+            <li class="causes__step causes__step--2"><span class="causes__number">2</span><img src="assets/cause-rate.png" alt="" aria-hidden="true"><div><h3>Высокая ключевая ставка</h3><p>Деньги для бизнеса становятся дорогими.</p></div></li>
+            <li class="causes__step causes__step--3"><span class="causes__number">3</span><img src="assets/cause-investment.png" alt="" aria-hidden="true"><div><h3>Инвестиции тормозятся</h3><p>Заводы реже берут кредиты на развитие и модернизацию.</p></div></li>
+            <li class="causes__step causes__step--4"><span class="causes__number">4</span><img src="assets/cause-import.png" alt="" aria-hidden="true"><div><h3>Импорт получает преимущество</h3><p>Отечественным товарам сложнее конкурировать.</p></div></li>
+            <li class="causes__step causes__step--5"><span class="causes__number">5</span><img src="assets/cause-production.png" alt="" aria-hidden="true"><div><h3>Производство слабеет</h3><p>Обновление замедляется, часть мощностей простаивает.</p></div></li>
+            <li class="causes__step causes__step--6"><span class="causes__number">6</span><img src="assets/cause-goods.png" alt="" aria-hidden="true"><div><h3>Своих товаров меньше</h3><p>Экономика сильнее зависит от импорта.</p></div></li>
+            <li class="causes__step causes__step--7"><span class="causes__number">7</span><img src="assets/cause-inflation-return.png" alt="" aria-hidden="true"><div><h3>Инфляция возвращается</h3><p>Ослабление рубля и импортозависимость вновь толкают цены вверх.</p></div></li>
           </ol>
-          <p class="causes__cycle-result"><strong>Замкнутый круг:</strong> боремся с инфляцией — убиваем производство — создаём новую инфляцию.</p>
         </div>
-        <p class="causes__closing">Проблема не в том, что у России нет ресурсов и возможностей для развития. Проблема в правилах, по которым работает экономика. Люди производят ВВП, но живут хуже всех, их голос не слышен, и они не в силах изменить ситуацию. <strong>Новая индустриализация — это справедливое отношение ко всем людям дела и труда.</strong></p>
+        <p class="causes__paradox"><span class="causes__paradox-icon" aria-hidden="true"><img class="causes__cycle-icon" src="assets/cycle-arrows.png?v=2" alt=""></span><span><strong>Главный парадокс:</strong> боремся с инфляцией → подавляем производство → создаём условия для новой инфляции.</span></p>
       </div>
     </section>
 

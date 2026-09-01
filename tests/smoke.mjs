@@ -68,9 +68,12 @@ expect(html.includes('Нам нужна страна, где своё дело �
   'Мы знаем, как этого добиться! Новая индустриализация — реальный план развития экономики России.'
 ].forEach((text) => expect(html.includes(text), `Не перенесён текст первого экрана: ${text}`));
 const causesFlow = html.match(/<ol class="causes__flow">([\s\S]*?)<\/ol>/)?.[1] ?? '';
-expect((causesFlow.match(/<li>/g) || []).length === 8, 'Схема замкнутого круга должна содержать восемь этапов');
-expect(html.includes('Почему это происходит?') && html.includes('Замкнутый круг ошибок:'), 'Не добавлены заголовки третьего экрана');
-expect(html.includes('Пора включать голову и менять правила.') && html.includes('Новая индустриализация — это справедливое отношение ко всем людям дела и труда.'), 'Не перенесены ключевые выводы третьего экрана');
+expect((causesFlow.match(/<li\b/g) || []).length === 7, 'Схема замкнутого круга должна содержать семь этапов');
+expect(html.includes('Почему это происходит') && html.includes('Замкнутый круг ошибок'), 'Не добавлены заголовки третьего экрана');
+expect(count(/assets\/cause-(inflation-goal|rate|investment|import|production|goods|inflation-return)\.png/g) === 7, 'Для каждого этапа схемы должна использоваться отдельная иллюстрация');
+expect(html.includes('Главный парадокс:') && html.includes('боремся с инфляцией → подавляем производство → создаём условия для новой инфляции.'), 'Не добавлен вывод третьего экрана');
+expect(css.includes('.causes__step--1') && css.includes('.causes__step--7') && css.includes('.causes__arrows{position:absolute') && css.includes('.causes__arrows{display:none}'), 'Третий экран должен иметь отдельные desktop- и mobile-компоновки');
+expect(count(/class="causes__cycle-icon"/g) === 2 && count(/assets\/cycle-arrows\.png/g) === 2, 'Значок замкнутого круга должен использовать единый PNG в центре и в блоке вывода');
 expect(count(/class="foundation__pillar"/g) === 3, 'Четвёртый экран должен содержать три опоры новой индустриализации');
 expect(html.includes('Что такое новая индустриализация?') && html.includes('Три кита новой индустриализации:'), 'Не добавлены заголовки четвёртого экрана');
 expect(html.includes('Мягкая денежно-кредитная политика') && html.includes('Стимулирующая налоговая система') && html.includes('Разумный протекционизм'), 'Не добавлены все три опоры новой индустриализации');
