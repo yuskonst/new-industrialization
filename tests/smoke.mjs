@@ -56,7 +56,7 @@ expect(css.includes('.header{background:var(--blue)') && css.includes('.nav a,.n
 expect(css.includes('.hero__lead span{background:none;color:var(--blue)') && css.includes('.steps__quote:before,.steps__quote:after{color:var(--blue)}'), 'Акцент в hero и кавычки должны быть синими');
 expect(html.includes('<span>Новая</span> <span>индустриализация</span>'), 'Не обновлён заголовок стартового экрана');
 expect(html.includes('href="#program">О программе</a>') && html.includes('href="#future">Цели</a>') && html.includes('href="#support">Поддержать</a>'), 'Верхняя панель не соответствует утверждённой навигации');
-expect(html.includes('class="button button--blue" href="#support">Поддержать программу'), 'На первом экране должна остаться кнопка поддержки');
+expect(html.includes('class="button button--blue button--cta" href="#support">Поддержать программу'), 'На первом экране должна остаться кнопка поддержки');
 expect(html.includes('Нам нужна страна, где своё дело и работа дают счастливую и безбедную жизнь'), 'Не добавлен подзаголовок первого экрана');
 [
   'Чтобы молодёжь оставалась в родных городах и создавала семьи.',
@@ -106,7 +106,7 @@ expect(css.includes('.loader::after{content:"";position:absolute;top:100%;left:0
 expect(!html.includes('Созидание должно снова стать основой развития России'), 'Заголовок «Созидание должно снова стать основой развития России» должен быть удалён');
 expect(html.includes('id="whyTitle" class="why__title">Почему действовать нужно сейчас'), 'Оставшийся подзаголовок должен стать заголовком седьмого блока');
 expect(!html.includes('Поддержать 10 шагов'), 'Кнопка седьмого блока не должна ссылаться на удалённые «10 шагов»');
-expect(html.includes('class="button button--outline" href="#support">Поддержать программу'), 'Кнопка седьмого блока должна называться «Поддержать программу»');
+expect(html.includes('class="button button--outline button--cta" href="#support">Поддержать программу'), 'Кнопка седьмого блока должна называться «Поддержать программу»');
 
 // Блок 8: убраны слоган и надпись «Вариант 1».
 expect(!html.includes('Русский – значит богатый'), 'Слоган «Русский – значит богатый!» должен быть удалён');
@@ -118,5 +118,14 @@ expect(!html.includes('08 · Ответы'), 'Подпись «08 · Ответ�
 expect(!html.includes('Когда тысячи верят в идею') && !html.includes('идея приходит в реальность'), 'Прежняя надпись подвала должна быть удалена');
 expect(html.includes('footer__top-brand'), 'В подвале вместо надписи должен появиться логотип с надписью');
 expect(count(/footer__resources.*?<\/div>/s) >= 1 && count(/<button type="button" aria-label="Телеграм">/g) === 1 && count(/aria-label="ВКонтакте"/g) === 1 && count(/aria-label="YouTube"/g) === 1, 'В подвале должны быть кнопки-иконки Телеграм, ВКонтакте и YouTube');
+['assets/social-telegram.png', 'assets/social-vk.png', 'assets/social-youtube.png'].forEach((src) => expect(html.includes(src), `В подвале должна использоваться загруженная иконка: ${src}`));
+
+// Единые CTA-кнопки регистрации: без стрелок, один жёлтый и один размер.
+expect(!html.includes('Поддержать программу <span'), 'Кнопки «Поддержать программу» не должны содержать стрелку');
+expect(!html.includes('Поддержать манифест <span'), 'Кнопка отправки формы не должна содержать стрелку');
+expect(count(/button--cta/g) === 4, 'Единый CTA-класс должен стоять ровно на 4 кнопках регистрации (шапка, седьмой блок, форма, пятый блок)');
+expect(html.includes('class="button button--yellow future__button button--cta"'), 'Кнопка пятого блока должна получить единый CTA-класс');
+expect(html.includes('class="button button--blue button--wide button--cta" type="submit">Поддержать манифест'), 'Кнопка отправки формы должна получить единый CTA-класс');
+expect(css.includes('.button--cta{') && css.includes('background:var(--yellow)') , 'Должен быть определён единый жёлтый CTA-класс кнопок');
 
 console.log('✓ Smoke tests passed: structure, placeholders, no-endpoint forms, interactions and mobile styles.');
